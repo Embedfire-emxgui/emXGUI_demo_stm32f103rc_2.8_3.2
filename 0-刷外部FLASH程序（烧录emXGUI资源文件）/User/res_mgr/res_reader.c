@@ -18,7 +18,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include "./spi_flash/bsp_flash_spi.h"
+#include "./drivers/fatfs_flash_spi.h"
 #include "./res_mgr/RES_MGR.h"
 
 

@@ -17,7 +17,7 @@
 #include "stm32f10x.h"
 #include "./led/bsp_led.h" 
 #include "./usart/bsp_usart.h"
-#include "./spi_flash/bsp_flash_spi.h"
+#include "./drivers/fatfs_flash_spi.h"
 #include "./key/bsp_key.h" 
 //#include "./delay/core_delay.h"  
 /* FatFs includes component */
@@ -50,7 +50,7 @@ int main(void)
     /* 系统时钟初始化成400MHz */
   
     LED_GPIO_Config();
-    LED_BLUE;	
+    LED1_ON;	
     /* 初始化USART1 配置模式为 115200 8-N-1 */
     USART_Config();	
   
@@ -63,7 +63,7 @@ int main(void)
     if(res_sd != FR_OK)
     {
       printf("f_mount ERROR!请给开发板插入SD卡然后重新复位开发板!");
-      LED_RED;
+      LED2_ON;
       while(1);
     }
   
